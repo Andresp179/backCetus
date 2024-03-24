@@ -20,8 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Models.Producto;
 import com.example.demo.Repository.ProductoDao;
-import com.gestion.empleados.excepciones.ResourceNotFoundException;
-import com.gestion.empleados.modelo.Empleado;
+
 
 
 
