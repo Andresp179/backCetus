@@ -3,6 +3,9 @@ package com.example.demo.Models;
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
@@ -12,19 +15,21 @@ import lombok.Setter;
 @Entity
 @Data
 @Table(name="recepcion")
-@Setter
-@Getter
+
 public class Recepcion {
 	
 	
-    
-
+	 private static final long serialVersionUID = 1L;
+	 
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		
+	private Long idProveedor;
+		
 	private Long idrecepcion;
 	
-	public Date fechaHora;
-	
-	public String idProveedor;
-	
+	public Date fechaHora;	
+		
 	public String idProducto;
 	
 	public String numeroFactura;
@@ -33,7 +38,7 @@ public class Recepcion {
 	
 	public String lote;
 	
-	public Recepcion(Long idrecepcion, Date fechaHora, String idProveedor,String idProducto, String numeroFactura, String Cantidad, String Lote) {
+	public Recepcion(Long idrecepcion, Date fechaHora, Long idProveedor,String idProducto, String numeroFactura, String cantidad, String lote) {
 		super();
 		this.idrecepcion=idrecepcion;
 		this.fechaHora=fechaHora;
@@ -52,11 +57,11 @@ public class Recepcion {
 		this.fechaHora = fechaHora;
 	}
 
-	public String getIdProveedor() {
+	public Long getIdProveedor() {
 		return idProveedor;
 	}
 
-	public void setIdProveedor(String idProveedor) {
+	public void setIdProveedor(Long idProveedor) {
 		this.idProveedor = idProveedor;
 	}
 

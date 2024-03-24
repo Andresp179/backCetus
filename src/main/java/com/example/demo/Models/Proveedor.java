@@ -15,8 +15,6 @@ import java.io.Serializable;
 @Entity
 @Data
 @Table(name="proveedor")
-@Setter
-@Getter
 public class Proveedor {
 	
   private static final long serialVersionUID = 1L;

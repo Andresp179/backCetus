@@ -17,7 +17,7 @@ import com.example.demo.Repository.ProductoDao;
 
 
 @Controller
-@RequestMapping("/api/v1/")
+@RequestMapping("/")
 @CrossOrigin(origins="http://localhost:4200/")
 public class ProductoController {
 
@@ -25,7 +25,7 @@ public class ProductoController {
 	private ProductoDao productoServiceImpl;
 
 		
-	@GetMapping("/empleados")
+	@RequestMapping(value = "/api/v1/productos", method = RequestMethod.GET)
 	public List<Producto> listarProductos(Model model) {
 		return productoServiceImpl.findAll();
 	}

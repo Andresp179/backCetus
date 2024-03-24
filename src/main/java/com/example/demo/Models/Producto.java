@@ -2,12 +2,13 @@ package com.example.demo.Models;
 
 import java.io.Serializable;
 import java.util.Optional;
+
+
+
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import jakarta.persistence.Entity;
 
 
@@ -24,14 +25,19 @@ public class Producto implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
+	@Column(name = "idproducto", nullable = false)
 	private Long idProducto;
 	
+	@Column(name = "nombreProducto", nullable = false)
 	public String nombreProducto;
 	
+	@Column(name = "descripcion", nullable = false)
 	public String descripcion;
 	
+	@Column(name = "estado", nullable = false)
 	public String estado;
 	
+	@Column(name = "nombreLaboratorio", nullable = false)
 	public String nombreLaboratorio;
  
 	public Producto(Long idProducto, String nombreProducto, String descripcion, String estado, String nombreLaboratorio) {
