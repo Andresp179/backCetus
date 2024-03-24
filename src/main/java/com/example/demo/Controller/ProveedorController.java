@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Models.Proveedor;
 import com.example.demo.Repository.ProveedorDao;
 
-@Controller
+
 @RequestMapping("/")
 @CrossOrigin(origins="http://localhost:4200/")
 @RestController
