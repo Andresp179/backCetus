@@ -14,7 +14,7 @@ import com.example.demo.Models.Proveedor;
 import com.example.demo.Repository.ProveedorDao;
 
 
-@RequestMapping("/")
+@RequestMapping
 @CrossOrigin(origins="http://localhost:4200/")
 @RestController
 public class ProveedorController {

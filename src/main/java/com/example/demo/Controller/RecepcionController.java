@@ -13,7 +13,7 @@ import com.example.demo.Models.Recepcion;
 import com.example.demo.Repository.RecepcionDao;
 
 
-@RequestMapping("/")
+@RequestMapping
 @CrossOrigin(origins="http://localhost:4200/")
 @RestController
 public class RecepcionController {
