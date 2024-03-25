@@ -1,0 +1,11 @@
+En esta ocasión se utilizó el IDE spring tool suite para hacer el backend con java, spring boot, se separó todo por carpetas, controller que es donde está los endpoint de cada entidad, los modelos de cada tabla a la que hace referencia cada tabla, es la construcción de las mismas, los repository que es lo que separa las consultas a la base de datos con JPA, y la carpeta service que es donde se deja separado el service de cada tabla que es donde se declaran los metodos a manipular la BD y el serviceImpl que son los metodos con sus funcionalidades.
+
+Se utilizó las anotaciones como 
+RestController: Ayuda a devolver el Json o en su defecto un objeto
+RequestMapping:se utiliza para asignar solicitudes web a clases de manejador y métodos de manejador específicos
+@CrossOrigin: Para compartir info con el frontEnd
+@Data:
+@Entity: Para decir o saber que es una tabla de la BD
+@Table: Para relacionar con la tabla de la BD
+@Column: Para decir que campo es de la BD
+@Override: Para que el compilador ayude a detectar errores
