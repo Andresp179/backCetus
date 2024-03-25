@@ -48,7 +48,7 @@ public class ProductoController {
 
 	// este metodo sirve para buscar un producto
 	@GetMapping("/productos/{id}")
-	public ResponseEntity<Producto> obtenerEmpleadoPorId(@PathVariable Long id) {
+	public ResponseEntity<Producto> obtenerProductoPorId(@PathVariable Long id) {
 		Producto producto = productoServiceImpl.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
 		return ResponseEntity.ok(producto);
