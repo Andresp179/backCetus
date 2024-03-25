@@ -46,7 +46,7 @@ public class ProveedorController {
 		return ResponseEntity.ok(proveedor);
 	}
 	
-	//este metodo sirve para actualizar producto
+	//este metodo sirve para actualizar proveedor
 		@PutMapping("/proveedor/{id}")
 		public ResponseEntity<Proveedor> actualizarProveedor(@PathVariable Long id,@RequestBody Proveedor detallesProveedor){
 			Proveedor proveedor = proveedorDao.findById(id)
@@ -62,9 +62,9 @@ public class ProveedorController {
 	    }
 		
 		@DeleteMapping("/proveedor/{id}")
-		public ResponseEntity<Map<String,Boolean>> eliminarProducto(@PathVariable Long id){
+		public ResponseEntity<Map<String,Boolean>> eliminarProveedor(@PathVariable Long id){
 			Proveedor proveedor = proveedorDao.findById(id)
-					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
+					            .orElseThrow(() -> new ResourceNotFoundException("No existe el proveedor con el ID : " + id));
 			
 			proveedorDao.delete(proveedor);
 			Map<String, Boolean> respuesta = new HashMap<>();
