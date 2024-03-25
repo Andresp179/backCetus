@@ -39,7 +39,7 @@ public class ProveedorController {
 	
 
 	// este metodo sirve para buscar un proveedor
-	@GetMapping("/proveedor/{id}")
+	@GetMapping("/api/v1/proveedor/{id}")
 	public ResponseEntity<Proveedor> obtenerProductoPorId(@PathVariable Long id) {
 		Proveedor proveedor = proveedorDao.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No existe el proveedor con el ID : " + id));
@@ -47,7 +47,7 @@ public class ProveedorController {
 	}
 	
 	//este metodo sirve para actualizar proveedor
-		@PutMapping("/proveedor/{id}")
+		@PutMapping("/api/v1/proveedor/{id}")
 		public ResponseEntity<Proveedor> actualizarProveedor(@PathVariable Long id,@RequestBody Proveedor detallesProveedor){
 			Proveedor proveedor = proveedorDao.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
@@ -61,7 +61,7 @@ public class ProveedorController {
 			return ResponseEntity.ok(proveedorActualizado);
 	    }
 		
-		@DeleteMapping("/proveedor/{id}")
+		@DeleteMapping("/api/v1/proveedor/{id}")
 		public ResponseEntity<Map<String,Boolean>> eliminarProveedor(@PathVariable Long id){
 			Proveedor proveedor = proveedorDao.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe el proveedor con el ID : " + id));

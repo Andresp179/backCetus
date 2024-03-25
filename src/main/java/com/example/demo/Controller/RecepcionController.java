@@ -33,7 +33,7 @@ public class RecepcionController {
 		return recepcionDao.findAll();}	
 	
 	
-	@GetMapping("/recepcion/{id}")
+	@GetMapping("/api/v1/recepcion/{id}")
 	public ResponseEntity<Recepcion> obtenerRecepcionPorId(@PathVariable Long id) {
 		Recepcion recepcion = recepcionDao.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No existe el recepcion con el ID : " + id));
@@ -41,7 +41,7 @@ public class RecepcionController {
 	}
 	
 	//este metodo sirve para actualizar recepcion
-		@PutMapping("/recepcion/{id}")
+		@PutMapping("/api/v1/recepcion/{id}")
 		public ResponseEntity<Recepcion> actualizarRecepcion(@PathVariable Long id,@RequestBody Recepcion detallesRecepcion){
 			Recepcion recepcion = recepcionDao.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe el recepcion con el ID : " + id));
@@ -57,7 +57,7 @@ public class RecepcionController {
 			return ResponseEntity.ok(recepcionActualizado);
 	    }
 		
-		@DeleteMapping("/recepcion/{id}")
+		@DeleteMapping("/api/v1/recepcion/{id}")
 		public ResponseEntity<Map<String,Boolean>> eliminarRecepcion(@PathVariable Long id){
 			Recepcion recepcion = recepcionDao.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe la recepcion con el ID : " + id));
