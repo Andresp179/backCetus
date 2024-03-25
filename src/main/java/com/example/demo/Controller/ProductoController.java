@@ -46,7 +46,7 @@ public class ProductoController {
 		return productoServiceImpl.save(producto);
 	}
 
-	// este metodo sirve para buscar un empleado
+	// este metodo sirve para buscar un producto
 	@GetMapping("/productos/{id}")
 	public ResponseEntity<Producto> obtenerEmpleadoPorId(@PathVariable Long id) {
 		Producto producto = productoServiceImpl.findById(id)
@@ -54,9 +54,9 @@ public class ProductoController {
 		return ResponseEntity.ok(producto);
 	}
 	
-	//este metodo sirve para actualizar empleado
+	//este metodo sirve para actualizar producto
 		@PutMapping("/productos/{id}")
-		public ResponseEntity<Producto> actualizarEmpleado(@PathVariable Long id,@RequestBody Producto detallesProducto){
+		public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id,@RequestBody Producto detallesProducto){
 			Producto producto = productoServiceImpl.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
 			
@@ -69,10 +69,10 @@ public class ProductoController {
 			return ResponseEntity.ok(productoActualizado);
 	    }
 		
-		@DeleteMapping("/empleados/{id}")
-		public ResponseEntity<Map<String,Boolean>> eliminarEmpleado(@PathVariable Long id){
+		@DeleteMapping("/productos/{id}")
+		public ResponseEntity<Map<String,Boolean>> eliminarProducto(@PathVariable Long id){
 			Producto producto = productoServiceImpl.findById(id)
-					            .orElseThrow(() -> new ResourceNotFoundException("No existe el empleado con el ID : " + id));
+					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
 			
 			productoServiceImpl.delete(producto);
 			Map<String, Boolean> respuesta = new HashMap<>();
