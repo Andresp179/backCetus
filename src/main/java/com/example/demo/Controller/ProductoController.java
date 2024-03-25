@@ -47,7 +47,7 @@ public class ProductoController {
 	}
 
 	// este metodo sirve para buscar un producto
-	@GetMapping("/productos/{id}")
+	@GetMapping("/api/v1/productos/{id}")
 	public ResponseEntity<Producto> obtenerProductoPorId(@PathVariable Long id) {
 		Producto producto = productoServiceImpl.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
@@ -55,7 +55,7 @@ public class ProductoController {
 	}
 	
 	//este metodo sirve para actualizar producto
-		@PutMapping("/productos/{id}")
+		@PutMapping("/api/v1/productos/{id}")
 		public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id,@RequestBody Producto detallesProducto){
 			Producto producto = productoServiceImpl.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
