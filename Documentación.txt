@@ -9,3 +9,5 @@ RequestMapping:se utiliza para asignar solicitudes web a clases de manejador y m
 @Table: Para relacionar con la tabla de la BD
 @Column: Para decir que campo es de la BD
 @Override: Para que el compilador ayude a detectar errores
+
+La api queda funcional con todo OK.
