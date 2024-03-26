@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.Models.Proveedor;
 
 @Repository
-public interface ProveedorDao extends JpaRepository<Proveedor,Long> {
+public interface ProveedorDao extends JpaRepository<Proveedor, Long> {
 
 }

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.Models.Recepcion;
 
-public interface RecepcionDao extends JpaRepository<Recepcion, Long>{
+public interface RecepcionDao extends JpaRepository<Recepcion, Long> {
 
 }

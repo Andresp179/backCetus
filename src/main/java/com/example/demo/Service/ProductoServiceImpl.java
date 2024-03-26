@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.example.demo.Models.Producto;
 import com.example.demo.Repository.ProductoDao;
 
-public class ProductoServiceImpl implements ProductoService{
+public class ProductoServiceImpl implements ProductoService {
 
 	private ProductoDao productoDao;
 

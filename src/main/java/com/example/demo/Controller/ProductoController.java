@@ -21,9 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Excepciones.ResourceNotFoundException;
 import com.example.demo.Models.Producto;
 import com.example.demo.Repository.ProductoDao;
+import com.example.demo.Excepciones.ResourceNotFoundException;
+
+
+
+
 
 
 
@@ -69,7 +73,7 @@ public class ProductoController {
 			return ResponseEntity.ok(productoActualizado);
 	    }
 		
-		@DeleteMapping("/productos/{id}")
+		@DeleteMapping("/api/v1//productos/{id}")
 		public ResponseEntity<Map<String,Boolean>> eliminarProducto(@PathVariable Long id){
 			Producto producto = productoServiceImpl.findById(id)
 					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));

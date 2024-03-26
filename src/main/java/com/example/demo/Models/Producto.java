@@ -15,7 +15,6 @@ import jakarta.persistence.Entity;
 @Data
 @Entity
 @Table(name = "producto")
-
 public class Producto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -38,6 +37,14 @@ public class Producto implements Serializable {
 	@Column(name = "nombre_Laboratorio", nullable = false)
 	public String nombreLaboratorio;
 
+	
+	public Producto(Long idProducto,String nombre_producto,String descripcion, String estado, String nombre_Laboratorio) {
+		this.idProducto=idProducto;
+		this.nombreProducto=nombre_producto;
+		this.descripcion=descripcion;
+		this.estado=estado;
+		this.nombreLaboratorio=nombre_Laboratorio;		
+	}
 		
 	public Long getIdProducto() {
 		return idProducto;
@@ -84,6 +91,8 @@ public class Producto implements Serializable {
 	}
 	
 	public Producto() {}
+	
+	
 	
 
 }

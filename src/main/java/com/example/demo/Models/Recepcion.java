@@ -11,44 +11,42 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
 @Data
-@Table(name="recepcion")
-
+@Table(name = "recepcion")
 public class Recepcion {
-	
-	
-	 private static final long serialVersionUID = 1L;
-	 
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long idProveedor;
-		
+
 	private Long idrecepcion;
-	
-	public Date fechaHora;	
-		
+
+	public Date fechaHora;
+
 	public String idProducto;
-	
+
 	public String numeroFactura;
-	
-	public String cantidad;	
-	
+
+	public String cantidad;
+
 	public String lote;
-	
-	public Recepcion(Long idrecepcion, Date fechaHora, Long idProveedor,String idProducto, String numeroFactura, String cantidad, String lote) {
+
+	public Recepcion(Long idrecepcion, Date fechaHora, Long idProveedor, String idProducto, String numeroFactura,
+			String cantidad, String lote) {
 		super();
-		this.idrecepcion=idrecepcion;
-		this.fechaHora=fechaHora;
-		this.idProveedor=idProveedor;
-		this.idProducto=idProducto;
-		this.numeroFactura=numeroFactura;
-		this.cantidad=cantidad;
-		this.lote=lote;
+		this.idrecepcion = idrecepcion;
+		this.fechaHora = fechaHora;
+		this.idProveedor = idProveedor;
+		this.idProducto = idProducto;
+		this.numeroFactura = numeroFactura;
+		this.cantidad = cantidad;
+		this.lote = lote;
 	}
-	
+
 	public Date getFechaHora() {
 		return fechaHora;
 	}
@@ -104,6 +102,5 @@ public class Recepcion {
 	public Long getIdrecepcion() {
 		return idrecepcion;
 	}
-
 
 }

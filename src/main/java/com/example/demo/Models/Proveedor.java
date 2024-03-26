@@ -14,24 +14,24 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table(name="proveedor")
+@Table(name = "proveedor")
 public class Proveedor {
-	
-  private static final long serialVersionUID = 1L;
-	 
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-    private Long idProveedor;
-	
+
+	private Long idProveedor;
+
 	public String nIdentificacion;
-	
+
 	public String razonSocial;
-	
+
 	public String direccion;
-	
+
 	public String nombreContacto;
-	
+
 	public String telefonoContacto;
 
 	public Long getIdProveedor() {
@@ -86,4 +86,4 @@ public class Proveedor {
 		return serialVersionUID;
 	}
 
-	}
+}
