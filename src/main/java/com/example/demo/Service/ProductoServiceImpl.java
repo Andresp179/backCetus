@@ -1,7 +1,12 @@
 package com.example.demo.Service;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.example.demo.Models.Producto;
 import com.example.demo.Repository.ProductoDao;
@@ -9,6 +14,7 @@ import com.example.demo.Repository.ProductoDao;
 public class ProductoServiceImpl implements ProductoService {
 
 	private ProductoDao productoDao;
+	private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public List<Producto> listaProductos() {
@@ -32,6 +38,26 @@ public class ProductoServiceImpl implements ProductoService {
 	public Optional<Producto> encontrarProducto(Producto producto) {
 		// TODO Auto-generated method stub
 		return productoDao.findById(producto.getIdProducto());
+	}
+
+	@Override
+	public int[] batchUpdateUsingJdbcTemplate(List<Producto> productos) {
+		 return jdbcTemplate.batchUpdate("INSERT INTO EMPLOYEE VALUES (?, ?, ?, ?,?)", (BatchPreparedStatementSetter) new BatchPreparedStatementSetter() {
+
+	            @Override
+	            public void setValues(final PreparedStatement ps, final int i) throws SQLException {
+	                ps.setLong(1, productos.get(i).getIdProducto());
+	                ps.setString(2, productos.get(i).getNombreProducto());
+	                ps.setString(3, productos.get(i).getDescripcion());
+	                ps.setString(4, productos.get(i).getEstado());
+	                ps.setString(5, productos.get(i).getNombreLaboratorio());
+	            }
+
+	            @Override
+	            public int getBatchSize() {
+	                return 3;
+	            }				
+	        });
 	}
 
 }

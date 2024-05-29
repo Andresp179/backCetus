@@ -14,5 +14,8 @@ public interface ProductoService {
     public void eliminar (Producto producto);
 
     public Optional<Producto> encontrarProducto(Producto producto);	
+    
+    public int[] batchUpdateUsingJdbcTemplate(List<Producto> productos);    
+    
 	
 }
