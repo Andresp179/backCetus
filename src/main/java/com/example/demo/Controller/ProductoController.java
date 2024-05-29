@@ -62,7 +62,7 @@ public class ProductoController {
 		@PutMapping("/api/v1/productos/{id}")
 		public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id,@RequestBody Producto detallesProducto){
 			Producto producto = productoServiceImpl.findById(id)
-					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
+		            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
 			
 			producto.setNombreProducto(detallesProducto.getNombreProducto());
 			producto.setDescripcion(detallesProducto.getDescripcion());
@@ -76,7 +76,7 @@ public class ProductoController {
 		@DeleteMapping("/api/v1//productos/{id}")
 		public ResponseEntity<Map<String,Boolean>> eliminarProducto(@PathVariable Long id){
 			Producto producto = productoServiceImpl.findById(id)
-					            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
+		            .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con el ID : " + id));
 			
 			productoServiceImpl.delete(producto);
 			Map<String, Boolean> respuesta = new HashMap<>();

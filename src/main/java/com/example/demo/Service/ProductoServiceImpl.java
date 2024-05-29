@@ -9,13 +9,14 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.example.demo.Models.Producto;
+import com.example.demo.Models.Proveedor;
 import com.example.demo.Repository.ProductoDao;
 
 public class ProductoServiceImpl implements ProductoService {
 
 	private ProductoDao productoDao;
-	private JdbcTemplate jdbcTemplate;
-
+	private  JdbcTemplate jdbcTemplate;
+	private Producto save;
 	@Override
 	public List<Producto> listaProductos() {
 		// TODO Auto-generated method stub
@@ -42,7 +43,8 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	public int[] batchUpdateUsingJdbcTemplate(List<Producto> productos) {
-		 return jdbcTemplate.batchUpdate("INSERT INTO EMPLOYEE VALUES (?, ?, ?, ?,?)", (BatchPreparedStatementSetter) new BatchPreparedStatementSetter() {
+	
+	return jdbcTemplate.batchUpdate("INSERT INTO producto VALUES (?, ?, ?, ?,?)", (BatchPreparedStatementSetter) new BatchPreparedStatementSetter() {
 
 	            @Override
 	            public void setValues(final PreparedStatement ps, final int i) throws SQLException {
